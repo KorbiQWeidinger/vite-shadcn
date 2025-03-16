@@ -1,11 +1,14 @@
-import BookmarkManager from "./components/bookmark-manager";
+import { Provider as ReduxProvider } from 'react-redux';
+import { ThemeProvider } from '@/context/theme-provider';
+import { Routes } from '@/routes/Routes';
+import { store } from '@/store';
 
-function App() {
+export function App() {
   return (
-    <main className="min-h-screen bg-background">
-      <BookmarkManager />
-    </main>
+    <ThemeProvider>
+      <ReduxProvider store={store}>
+        <Routes />
+      </ReduxProvider>
+    </ThemeProvider>
   );
 }
-
-export default App;

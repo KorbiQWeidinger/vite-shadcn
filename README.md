@@ -1,54 +1,51 @@
-# React + TypeScript + Vite
+# vite-shadcn template
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my vite-shadcn template!
+Check it out here: [vite-shadcn](https://korbiqweidinger.github.io/vite-shadcn/)
 
-Currently, two official plugins are available:
+## What is this template?
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This template is a starting point for building a web application using [Vite](https://vite.dev/) and [Shadcn UI](https://ui.shadcn.com/).
+It includes a basic setup for routing, state management, theming, testing and linting.
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Vite
+- TypeScript
+- Shadcn UI
+- ESLint and Prettier for code quality
+- Routing with React Hash Router (hash router is used because gh-pages doesn't support browser router)
+- State management with Redux Toolkit
+- Pre-commit hooks with Husky
+- Vitest for testing
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Hosting on gh-pages
+
+This template is configured to auto deploy to gh-pages.
+Therefore it includes a `pages.yml` file that autodeploys the main branch to gh-pages.
+
+If you have no custom url you need to replace the `base` in `vite.config.ts` and in the `dev` script in `package.json` with your project name.
+If you want to host this with a custom url you remove the `base` from `vite.config.ts` and from the `dev` script in `package.json`.
+
+```ts
+// vite.config.ts
+export default defineConfig({
+  //...
+  base: '/github-repo-name/',
+});
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+and
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```json
+// package.json
+{
+  "scripts": {
+    "dev": "vite build --base=/github-repo-name/"
+  }
+}
 ```
+
+## What to replace
+
+- replace all occurences of `vite-shadcn` with your project name
