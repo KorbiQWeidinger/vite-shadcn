@@ -27,18 +27,18 @@ Therefore it includes a `pages.yml` file that autodeploys the main branch to gh-
 If you have no custom url you need to replace the `base` in `vite.config.ts` and in the `dev` script in `package.json` with your project name.
 If you want to host this with a custom url you remove the `base` from `vite.config.ts` and from the `dev` script in `package.json`.
 
+File: `vite.config.ts`
+
 ```ts
-// vite.config.ts
 export default defineConfig({
   //...
   base: '/github-repo-name/',
 });
 ```
 
-and
+File: `package.json`
 
 ```json
-// package.json
 {
   "scripts": {
     "dev": "vite build --base=/github-repo-name/"
