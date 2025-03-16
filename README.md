@@ -49,3 +49,7 @@ File: `package.json`
 ## What to replace
 
 - replace all occurences of `vite-shadcn` with your project name
+
+## Don't forget to
+
+- `npm run prepare` to setup pre-commit hooks
