@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "homepage": ".",
+  "packageManager": "pnpm@9.15.0",
   "scripts": {
     "dev": "vite --base=/vite-shadcn/",
     "build": "tsc -p tsconfig.app.json && vite build",
