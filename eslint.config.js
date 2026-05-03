@@ -5,15 +5,14 @@ import reactRefresh from 'eslint-plugin-react-refresh';
 import tseslint from 'typescript-eslint';
 
 export default tseslint.config(
-  { ignores: ['dist'] },
+  { ignores: ['dist', 'coverage'] },
   {
     extends: [js.configs.recommended, ...tseslint.configs.recommended],
     files: ['**/*.{ts,tsx}'],
     languageOptions: {
-      ecmaVersion: 2020,
+      ecmaVersion: 2023,
       globals: {
         ...globals.browser,
-        React: 'readonly',
       },
       parserOptions: {
         ecmaFeatures: {
@@ -45,7 +44,7 @@ export default tseslint.config(
       // Style
       'no-nested-ternary': 'warn',
       'spaced-comment': ['warn', 'always'],
-      'linebreak-style': 0,
+      'linebreak-style': 'off',
 
       // TypeScript specific
       '@typescript-eslint/no-unused-vars': [
