@@ -52,4 +52,4 @@ File: `package.json`
 
 ## Don't forget to
 
-- `npm run prepare` to setup pre-commit hooks
+- `pnpm run prepare` to setup pre-commit hooks
