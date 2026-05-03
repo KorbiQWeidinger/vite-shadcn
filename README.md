@@ -14,7 +14,7 @@ It includes a basic setup for routing, state management, theming, testing and li
 - TypeScript
 - Shadcn UI
 - ESLint and Prettier for code quality
-- Routing with React Hash Router (hash router is used because gh-pages doesn't support browser router)
+- Routing with `react-router` HashRouter (used because gh-pages doesn't support browser routers)
 - State management with Redux Toolkit
 - Pre-commit hooks with Husky
 - Vitest for testing
@@ -24,8 +24,8 @@ It includes a basic setup for routing, state management, theming, testing and li
 This template is configured to auto deploy to gh-pages.
 Therefore it includes a `pages.yml` file that autodeploys the main branch to gh-pages.
 
-If you have no custom url you need to replace the `base` in `vite.config.ts` and in the `dev` script in `package.json` with your project name.
-If you want to host this with a custom url you remove the `base` from `vite.config.ts` and from the `dev` script in `package.json`.
+If you don't have a custom url, replace the `base` in `vite.config.ts` with your project name.
+If you want to host this with a custom url, remove `base` from `vite.config.ts`.
 
 File: `vite.config.ts`
 
@@ -34,16 +34,6 @@ export default defineConfig({
   //...
   base: '/github-repo-name/',
 });
-```
-
-File: `package.json`
-
-```json
-{
-  "scripts": {
-    "dev": "vite build --base=/github-repo-name/"
-  }
-}
 ```
 
 ## What to replace

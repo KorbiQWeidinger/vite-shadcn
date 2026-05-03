@@ -15,7 +15,7 @@ Do not use default exports!
 - shadcn
 - redux tool kit (RTK)
 - tailwind
-- framer-motion
+- motion (formerly framer-motion)
 - vitest
 
 ## Installing ui components
